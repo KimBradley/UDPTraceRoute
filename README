@@ -1,0 +1,30 @@
+UDPTraceRoute
+=============
+
+Given a destination port, number of router hops, and an IP address, traces the route taken from your local host to the given IP address by displaying each IP address and the time taken to reach each hop.
+
+To Compile:
+    use ant and the build.xml file.
+
+To Run: (VM root access in build folder)
+    java -Djava.library.path=../lib/ -cp ./:../lib/* UDPTraceroute -p <port> -h <max_hops>  <IP address>
+    
+    
+/*
+ * SAMPLE OUTPUT:
+ * 
+ * [root@vm97 build]# java -Djava.library.path=../lib/ -cp ./:../lib/* UDPTraceroute -p 33434 -h 30  173.194.37.51
+ * 
+ * ***********************START_TRACEROUTE***********************
+ * TTL=1	|	HopIP=172.17.152.1  	|	Time=1.28ms
+ * TTL=2	|	HopIP=128.192.0.5	    |	Time=1.46ms
+ * TTL=3	|	HopIP=128.192.254.49	|	Time=1.59ms
+ * TTL=4	|	HopIP=128.192.254.49	|	Time=(timeout)
+ * TTL=5	|	HopIP=128.192.166.33	|	Time=4.38ms
+ * TTL=6	|	HopIP=74.125.48.33	  |	Time=3.12ms
+ * TTL=7	|	HopIP=64.233.174.2  	|	Time=4.37ms
+ * TTL=8	|	HopIP=64.233.175.92	  |	Time=4.88ms
+ * TTL=9	|	HopIP=173.194.37.51	  |	Time=4.66ms
+ * ************************STOP_TRACEROUTE***********************
+ * 
+ */
